@@ -1,0 +1,25 @@
+body {
+  background-color: rgb(27, 27, 27);
+}
+
+.card-img-top {
+  height: 400px;
+}
+
+.card-img-top {
+  z-index: 1;
+}
+.card-img-top:hover {
+  background-color: black;
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.truncate-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  line-height: 1.3em;
+  padding-top: 65%;
+}

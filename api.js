@@ -9,7 +9,7 @@ const getData = async (url) => {
   }
 };
 
-for (let index = 1; index <= 3; index++) {
+for (let index = 1; index <= 8; index++) {
   const data = `https://api.tvmaze.com/shows/${index}`;
   getData(data);
 }
@@ -19,16 +19,17 @@ function showCard(serial) {
 
   const card = document.createElement("div");
   card.classList.add("col");
-  card.innerHTML = `<div class="card h-100">
+  card.innerHTML = `<div class="card text-bg-dark h-100">
   <img src="${serial.image.original}" class="card-img-top" alt="${serial.name}" />
-  <div class="card-body">
+  <div class="card-img-overlay">
+   <div class="truncate-text">
     <h5 class="card-title">${serial.name}</h5>
     <p class="card-text">
       ${serial.summary}
     </p>
+   </div>
+    <p class="card-text" style="margin-top: 15px;"><small>Ended: ${serial.ended}</small></p>
   </div>
-  <div class="card-footer">
-    <small class="text-muted">Ended: ${serial.ended}</small>
-  </div></div>`;
+  </div>`;
   cards.appendChild(card);
 }
