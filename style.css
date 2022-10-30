@@ -4,11 +4,9 @@ body {
 
 .card-img-top {
   height: 400px;
-}
-
-.card-img-top {
   z-index: 1;
 }
+
 .card-img-top:hover {
   background-color: black;
   opacity: 0.2;
@@ -25,12 +23,60 @@ body {
 }
 
 .moduleBack {
-  background-color: black;
-  opacity: 0.7;
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.7);
+}
+
+.module-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .moduleWin {
   background-color: rgb(27, 27, 27);
   width: 60%;
-  height: 60%;
+  color: azure;
+  display: flex;
+}
+
+.img-module {
+  height: 600px;
+}
+
+.module-text {
+  padding: 15px;
+}
+
+.title-module {
+  font-size: xx-large;
+  padding-top: 15px;
+}
+
+.module-ended {
+  text-align: end;
+  margin-top: 3em;
+}
+
+.rating {
+  padding-left: 5px;
+  font-size: x-large;
+}
+
+.rating-green {
+  color: green;
+}
+
+.rating-orange {
+  color: orange;
+}
+
+.rating-red {
+  color: red;
 }
