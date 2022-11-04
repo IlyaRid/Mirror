@@ -42,8 +42,10 @@ body {
 .moduleWin {
   background-color: rgb(27, 27, 27);
   width: 60%;
+  height: 600px;
   color: azure;
   display: flex;
+  overflow: auto;
 }
 
 .img-module {
@@ -56,12 +58,12 @@ body {
 
 .title-module {
   font-size: xx-large;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .module-ended {
   text-align: end;
-  margin-top: 3em;
+  margin-top: 55px;
 }
 
 .rating {
@@ -79,4 +81,27 @@ body {
 
 .rating-red {
   color: red;
+}
+
+.close-button {
+  float: right;
+  width: 20px;
+  height: 20px;
+}
+
+.favorites {
+  color: azure;
+  background-color: rgb(27, 27, 27);
+  border-color: rgb(81, 247, 114, 0.5);
+  padding: 8px;
+  padding-left: 11px;
+  padding-right: 11px;
+  margin-top: 25px;
+  border-style: double;
+  border-radius: 8px;
+  float: left;
+}
+
+.favorites-true {
+  background-color: rgb(81, 247, 114, 0.5);
 }
