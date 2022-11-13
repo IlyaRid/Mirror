@@ -22,6 +22,38 @@
 
 ## About the project
 
+&nbsp;&nbsp;&nbsp;&nbsp;The service is fully responsive for devices with any screen size. For this, the following Bootstrap classes were used:
+```html
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">...</div>
+```
+In addition, i used media queries in CSS. For example:
+```css
+@media screen and (min-width: 426px) and (max-width: 820px) {
+  .card-img-top {
+    height: 450px;
+  }
+
+  .moduleWin {
+    display: block;
+    height: 800px;
+  }
+
+  .img-module {
+    display: block;
+    margin: auto;
+    height: 500px;
+  }
+}
+```
+
+<p align="center">
+<img  src="./img/tablet1.png" width="20%">
+<img  src="./img/mobile1.png" width="20%">
+<img  src="./img/mobile2.png" width="20%">
+</p>
+
+##
+
 &nbsp;&nbsp;&nbsp;&nbsp;When you hover over the cover of the series, a part of its description appears. By clicking on the picture, a modal window will appear with all the details. If you need to find a specific TV show, you can use the search bar. The search is carried out by keywords. Below is the API download function:
 
 ```javascript
