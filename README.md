@@ -47,9 +47,9 @@ In addition, i used media queries in CSS. For example:
 ```
 
 <p align="center">
-<img  src="./img/tablet1.png" width="20%">
-<img  src="./img/mobile1.png" width="20%">
-<img  src="./img/mobile2.png" width="20%">
+<img  src="./img/tablet1.png" width="30%">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img  src="./img/mobile1.png" width="20%">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img  src="./img/mobile2.png" width="20%">
 </p>
 
 ##
