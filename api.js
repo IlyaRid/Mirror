@@ -44,7 +44,7 @@ function showCard(serial) {
       ${serial.summary}
     </p>
    </div>
-    <p class="card-text" style="margin-top: 15px;"><small>Ended: ${end}</small></p>
+    <p><small>Ended: ${end}</small></p>
   </div>
   </div>`;
 
@@ -138,8 +138,8 @@ const openModule = async (url) => {
         <p><b>Genres:</b> ${windowApi.genres}<br><br>
         <b>Rating: <span class="rating">${rat}</span></b>
         ${windowApi.summary}</p>
-        <button class="favorites" type="checkbox" id="${windowApi.id}">To favorites</button>
         <p class="module-ended"><small>Ended: ${end}</small></p>
+        <button class="favorites" type="checkbox" id="${windowApi.id}">To favorites</button>
       </div>
     </div>`;
     const rating = document.querySelector(".rating");
