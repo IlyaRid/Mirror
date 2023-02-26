@@ -87,6 +87,7 @@ body {
   float: right;
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 .favorites {

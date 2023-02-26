@@ -1,5 +1,5 @@
 const searchApi = `https://api.tvmaze.com/search/shows?q=`;
-let favorites = []; //// массив с избранными сериалами
+let favorites = JSON.parse(localStorage.favArray); //// массив с избранными сериалами
 
 //// Выгрузка API
 const getData = async (url) => {
@@ -131,7 +131,9 @@ const openModule = async (url) => {
     }
     windowEl.innerHTML = `
     <div class="moduleWin">
-      <img src="${windowApi.image.original}" class="img-module" alt="${windowApi.name}" />
+      <img src="${windowApi.image.original}" class="img-module" alt="${
+      windowApi.name
+    }" />
       <div class="module-text">
         <img src="/img/cross.svg" class="close-button" alt="close button"/>
         <h5 class="title-module">${windowApi.name}</h5><br>
@@ -139,7 +141,11 @@ const openModule = async (url) => {
         <b>Rating: <span class="rating">${rat}</span></b>
         ${windowApi.summary}</p>
         <p class="module-ended"><small>Ended: ${end}</small></p>
-        <button class="favorites" type="checkbox" id="${windowApi.id}">To favorites</button>
+        <button class="${
+          favorites.includes(String(windowApi.id))
+            ? "favorites favorites-true"
+            : "favorites"
+        }" type="checkbox" id="${windowApi.id}">To favorites</button>
       </div>
     </div>`;
     const rating = document.querySelector(".rating");
@@ -156,9 +162,15 @@ const openModule = async (url) => {
 
   const checkbox = document.querySelector(".favorites"); //// Добавляем в избранное
   checkbox.addEventListener("click", () => {
-    checkbox.classList.add("favorites-true");
-    favorites.push(checkbox.id);
+    if (favorites.includes(String(checkbox.id))) {
+      checkbox.classList.remove("favorites-true");
+      favorites = favorites.filter((item) => item != checkbox.id);
+    } else {
+      checkbox.classList.add("favorites-true");
+      favorites.push(checkbox.id);
+    }
     console.log(favorites);
+    localStorage.favArray = JSON.stringify(favorites);
   });
 
   const closeButton = document.querySelector(".close-button"); //// Ловим кнопку закрытия
@@ -183,13 +195,3 @@ window.addEventListener("keydown", (e) => {
     closeModule();
   }
 });
-
-export { favorites };
-
-// export default new Promise(async ($export) => {
-//   // await anything that needs to be imported
-//   // await anything that asynchronous
-//   // finally export the module resolving the Promise
-//   // as object, function, class, ... anything
-//   $export(favorites);
-// });
