@@ -8,8 +8,7 @@
 
 ## Description
 
-&nbsp;&nbsp;&nbsp;&nbsp;This project was made in the process of learning front-end development. It allows you to display a list of series using the public TVMaze API. This service allows you to find out detailed information about each of the series and TV shows: release year, genres, description, rating, etc. In addition, a keyword search is implemented.
-&nbsp;&nbsp;&nbsp;&nbsp;In the future, it is planned to introduce the possibility of adding the series you like to favorites and authorization in your personal account.
+&nbsp;&nbsp;&nbsp;&nbsp;This project was made in the process of learning front-end development. It allows you to display a list of series using the public TVMaze API. This service allows you to find out detailed information about each of the series and TV shows: release year, genres, description, rating, etc. The most liked pictures can be added to favorites. Then their entire list can be viewed on a separate Favorites page. In addition, a keyword search is implemented.
 
 <p align="center">
 <img  src="./img/previewCursor.png" width="80%"></p>
@@ -21,6 +20,27 @@
 </p>
 
 ## About the project
+
+&nbsp;&nbsp;&nbsp;&nbsp;Since it was decided to implement the favorites on a separate page, there was a need for a variable (an array with the id of the liked pictures), which would save the values when the page was updated. For this I used the object localStorage. As a solution without the use of backend tools, it is great. And since this project is aimed at studying exactly the part of front-end development, this is quite a suitable solution.
+
+```javascript
+let favorites = JSON.parse(localStorage.favArray); //// array with the id of the liked pictures
+
+const checkbox = document.querySelector(".favorites"); //// Add to favorites
+checkbox.addEventListener("click", () => {
+  if (favorites.includes(String(checkbox.id))) {
+    checkbox.classList.remove("favorites-true");
+    favorites = favorites.filter((item) => item != checkbox.id);
+  } else {
+    checkbox.classList.add("favorites-true");
+    favorites.push(checkbox.id);
+  }
+  // console.log(favorites);
+  localStorage.favArray = JSON.stringify(favorites);
+});
+```
+
+##
 
 &nbsp;&nbsp;&nbsp;&nbsp;The service is fully responsive for devices with any screen size. For this, the following Bootstrap classes were used:
 ```html
